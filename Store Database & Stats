@@ -1,0 +1,29 @@
+create table store (item_name text primary key, aisle integer, quantity integer, price integer, expiry_date integer);
+
+
+insert into store values ("Fruit", 1, 25, 1.99, "August 5, 2023");
+insert into store values ("Tires", 2, 10, 50.00, "May 11, 2023");
+insert into store values ("Cans", 3, 110, .79, "May 19, 2023");
+insert into store values ("Auto", 4, 12, 3.75, "March 20, 2023");
+insert into store values ("Trash", 5, 9, 4.00, "May 1, 2023");
+insert into store values ("Crackers", 6, 11, 3.50, "April 5, 2023");
+insert into store values ("Cookies", 7, 200, 5.55, "January 22, 2023");
+insert into store values ("Cakes", 8, 22, 25.00, "January 22, 2023");
+insert into store values ("Back_Scratchers", 9, 11, 3.25, "December 25, 2023");
+insert into store values ("Nail Polish", 10, 70, 5.65, "December 11 2023");
+insert into store values ("Paddle_Boards", 11, 39, 42.00, "February 27, 2023");
+insert into store values ("Cheese", 12, 5, 6.99, "June 9, 2023");
+insert into store values ("Salami", 13, 8, 2.99, "July 4, 2023");
+insert into store values ("Bikes", 14, 19, 45.00, "September 9, 2023");
+insert into store values ("Icing", 15, 20, 3.99, "October 11, 2023");
+
+--Display the database based on price
+select * from store
+order by price desc;
+
+--Display the database by quantities of each aisle
+select aisle, sum(quantity) 
+from store group by aisle;
+
+--Sum all items in the store database
+select sum(quantity) from store;
